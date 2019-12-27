@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <title>Завдання №3</title>
+        <script>
+            function triangle(obj)
+            {
+                var a, b ,c ;
+                a = (+obj.AB.value);
+                b = (+obj.BC.value);
+                c = (+obj.AC.value);
+                if (a && b && c) 
+                {
+                    if (a + b > c && b + c > a && a + c > b )
+                        obj.res.value = 'возможно';
+                    else 
+                    {
+                        obj.res.value = 'невозможно';
+                    }
+                }
+                else 
+                {
+                    obj.res.value = '';
+                }
+            }
+        </script>
+    </HEAD>
+    <BODY>
+        Завдання: Написати сценарій визначення можливості побудови трикутника із заданими довжинами сторін. <br><br>
+        <form name = "forma">
+            Сторона 1 (AB): <input type = "number" name = "AB" min = "1" onchange = "triangle(forma)"><br>
+            Сторона 2 (BC): <input type = "number" name = "BC" min = "1" onchange = "triangle(forma)"><br>
+            Сторона 3 (AC): <input type = "number" name = "AC" min = "1" onchange = "triangle(forma)"><br><br>
+            Построение треугольника с данными сторонами <input type = "text" size = 7 name = "res" readonly><br>
+            <input type = "reset" value = "Reset"><br><br><br> 
+        </form>
+        <p><a href="index.html">Головна</a></p>
+    </BODY>
+</HTML>

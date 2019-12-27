@@ -1,11 +1,32 @@
 {
   "name": "lab5",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "lab",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint .",
+    "start": "node server.js",
+    "prettier": "prettier --write ./server.js"
   },
-  "author": "vika",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vickygorm/nodejs.git"
+  },
+  "author": "natansaakyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vickygorm/nodejs/issues"
+  },
+  "homepage": "https://github.com/vickygorm/nodejs#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "husky": "^3.1.0",
+    "prettier": "1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier",
+      "pre-push": "npm run test"
+    }
+  }
 }
